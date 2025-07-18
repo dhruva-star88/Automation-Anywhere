@@ -43,4 +43,4 @@ npx cypress open
 ```
 
 ### Note:
-TestFlow.cy.js encompasses an end-to-end component testing script, integrating Mocha for comprehensive reporting and embedding assertions at critical checkpoints to ensure robust validation.
+**TestFlow.cy.js** encompasses an end-to-end component testing script, integrating Mocha for comprehensive reporting and embedding assertions at critical checkpoints to ensure robust validation.
