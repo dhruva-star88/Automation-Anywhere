@@ -6,7 +6,7 @@
     "message": "Test Message!!"
   },
   "learningInstance": {
-    "name": "Test2",
+    "name": "Test4",
     "optionText": "User-defined",
     "dropdownName": "domainId",
     "fieldName": "invoice",

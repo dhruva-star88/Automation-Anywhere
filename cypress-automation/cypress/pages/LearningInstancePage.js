@@ -28,10 +28,11 @@ class LearningInstancePage {
   cy.frameLoaded('iframe.modulepage-frame');
 
   cy.iframe('iframe.modulepage-frame')
-    .find('#create-learning-instance-button > button[aria-label="Create Learning Instance"]', { timeout: 10000 })
+    .contains('span.clipped-text__string.clipped-text__string--for_presentation', 'Create Learning Instance', { timeout: 10000 })
     .should('be.visible')
     .click();
 }
+
 
 
 enterName(name) {
