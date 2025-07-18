@@ -6,7 +6,7 @@ describe('Login Tests', () => {
 
   it('should login successfully', () => {
     loginPage.login(testData.username, testData.password);
-    // Assertion after login: check for welcome title on dashboard
+    
     cy.get('.homepage-welcome-title', { timeout: 10000 })
       .should('be.visible')
       .and('contain', 'WELCOME TO AUTOMATION ANYWHERE');

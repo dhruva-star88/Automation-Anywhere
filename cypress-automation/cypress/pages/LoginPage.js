@@ -1,18 +1,18 @@
 class LoginPage {
   visit() {
-    cy.visit('https://community.cloud.automationanywhere.digital/#/login?'); // put your real login URL here
+    cy.visit('https://community.cloud.automationanywhere.digital/#/login?'); 
   }
 
   enterUsername(username) {
-    cy.get('input[name="username"]', { timeout: 10000 }).type(username);// update selector as per actual input
+    cy.get('input[name="username"]', { timeout: 10000 }).type(username);
   }
 
   enterPassword(password) {
-    cy.get('input[name="password"]').type(password); // update selector
+    cy.get('input[name="password"]').type(password); 
   }
 
   clickLogin() {
-    cy.get('button[type="submit"]').click(); // update selector
+    cy.get('button[type="submit"]').click(); 
   }
 
   login(username, password) {

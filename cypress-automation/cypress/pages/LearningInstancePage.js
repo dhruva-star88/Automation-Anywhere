@@ -7,7 +7,6 @@ class LearningInstancePage {
     cy.visit('https://community.cloud.automationanywhere.digital/#/home');
   }
 
-  // AI submenu and Document Automation link are outside iframe, keep as is
   clickDocumentAutomationFromAiMenu() {
     cy.get('button[name="ai"]', { timeout: 10000 })
       .should('be.visible')
@@ -22,7 +21,6 @@ class LearningInstancePage {
       .click({ force: true });
   }
 
-  // Start iframe scoped actions here:
 
   clickOnLearningInstance() {
   cy.frameLoaded('iframe.modulepage-frame');
@@ -36,17 +34,17 @@ class LearningInstancePage {
 
 
 enterName(name) {
-  // Now wait for the popup/modal inside iframe to appear before typing
+
   cy.iframe('iframe.modulepage-frame')
     .find('input[name="name"]', { timeout: 15000 })
-    .should('be.visible') // Wait for modal input to be visible
+    .should('be.visible')
     .invoke('removeAttr', 'tabindex')
     .clear()
     .type(name);
 }
 
 
-  // Select a value from a dropdown by dropdown name and option text
+  
   openDropdown(dropdownName) {
   cy.iframe('iframe.modulepage-frame')
     .find(`div.rio-select-input[data-name="${dropdownName}"]`)
@@ -55,10 +53,10 @@ enterName(name) {
         .first()
         .click({ force: true });
     });
-  cy.wait(700);  // wait for UI to settle
+  cy.wait(700);  
 }
 
-// Function to select option globally inside iframe (after dropdown opened)
+
 selectOptionGlobally(optionText) {
   cy.iframe('iframe.modulepage-frame')
   .find('div[data-path="RioSelectInput.Dropdown.option-button"]')
@@ -117,7 +115,7 @@ cy.iframe('iframe.modulepage-frame')
   deleteInstance(){
     cy.get('button.datatable-actions-button').click();
 
-// Wait for Delete button to appear anywhere visible and click it
+
 cy.contains('button', 'Delete').should('be.visible').click();
 
   }

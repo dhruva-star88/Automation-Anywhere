@@ -1,19 +1,19 @@
 class MessageBoxPage {
   visit() {
-    cy.visit('https://community.cloud.automationanywhere.digital/#/home'); // update URL if needed
+    cy.visit('https://community.cloud.automationanywhere.digital/#/home'); 
   }
 
-  // Clicks the button to create a message box
+  
   clickCreateMessageBox() {
-    cy.contains('button', 'Create a bot…').click(); // selects button by its text
+    cy.contains('button', 'Create a bot…').click(); 
   }
 
-    // Asserts that the "Create Task Bot" title is visible
+    
    assertCreateTaskBotTitleVisible() {
     cy.contains('span', 'Create Task Bot').should('be.visible');
   }
 
-  // Enters the bot name 
+ 
    enterTitle(botName) {
     cy.get('input[name="name"]').type(botName); 
   }
@@ -29,13 +29,13 @@ class MessageBoxPage {
 
 
     searchMessage(term = 'message') {
-        cy.get('input[placeholder="Search actions"]', { timeout: 10000 }) // update selector to your actual search bar selector
+        cy.get('input[placeholder="Search actions"]', { timeout: 10000 }) 
         .should('be.visible')
         .clear()
         .type(term);
     }
 
-    // Click the search result containing the term 'message'
+
     clickSearchResult(term = 'Message box') {
         cy.get('button[name="item-button"]')
         .contains('Message box')
@@ -43,12 +43,12 @@ class MessageBoxPage {
         .click();
     }
 
-     // Enter the message content in the appropriate input/textarea
+     
     enterMessage(message) {
     cy.get('div[contenteditable="true"][name="content"]', { timeout: 10000 })
         .should('be.visible')
-        .clear()  // clear existing content
-        .type(message, { force: true }); // force true helps in tricky cases
+        .clear() 
+        .type(message, { force: true });
     }
 
     // Click the Save button
@@ -71,7 +71,7 @@ class MessageBoxPage {
     this.submit();
   }
 
-  // Composite method to handle the whole flow after navigation
+  
   searchAndSendMessage(message) {
     this.searchMessage();
     this.clickSearchResult();
