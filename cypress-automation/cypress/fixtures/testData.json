@@ -1,0 +1,15 @@
+{
+  "username": "workdhruvateja@gmail.com",
+  "password": "Dhruva@8867",
+  "messageBox": {
+    "botName": "Test Bot2",
+    "message": "Test Message!!"
+  },
+  "learningInstance": {
+    "name": "Test2",
+    "optionText": "User-defined",
+    "dropdownName": "domainId",
+    "fieldName": "invoice",
+    "fieldLabel":"Invoice"
+  }
+}
